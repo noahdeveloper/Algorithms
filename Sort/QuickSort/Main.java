@@ -30,23 +30,23 @@ public class Main {
 	public static void main(String[] args) {
 		int[] a = {20, 35, -15, 7, 55, 1, -22};
 		
-		mergeSort(a, 0, a.length);
+		QuickSort(a, 0, a.length);
 		
 		for(int i : a) {
 			System.out.print(i + ", ");
 		}
 	}
 	
-	public static void mergeSort(int[] a, int start, int end) {
+	public static void QuickSort(int[] a, int start, int end) {
 		if(end - start < 2)
 			return;
 		
-		int pivot = merge(a, start, end);
-		mergeSort(a, start, pivot);
+		int pivot = Pivot(a, start, end);
+		QuickSort(a, start, pivot);
 		mergeSort(a, pivot + 1, end);
 	}
 	
-	public static int merge(int[] a, int start, int end) {
+	public static int Pivot(int[] a, int start, int end) {
 		int pivot = a[start];
 		int i = start;
 		int j = end;
